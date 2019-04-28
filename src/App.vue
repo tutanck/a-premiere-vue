@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <hello ></hello>
-    <hello ></hello>
+    <citizen firstname="Maguie" lastname="Simpson" age="1"></citizen>
   </div>
 </template>
 
 <script>
-import Hello from "./components/chap4/Hello";
+import Citizen from "./components/chap5/Citizen";
 
 export default {
   name: "App",
   components: {
-    Hello
+    Citizen
   }
 };
 </script>
