@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <citizen firstname="Maguie" lastname="Simpson" age="1"></citizen>
+    <citizen firstname="Maggie" lastname="Simpson" age="1" ></citizen>
   </div>
 </template>
 
