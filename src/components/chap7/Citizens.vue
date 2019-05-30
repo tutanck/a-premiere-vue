@@ -1,24 +1,20 @@
-/* eslint-disable */
 <template>
-  <div>
-    <img src="../../assets/simpsons.png">
+<!-- eslint-disable -->
+    <div id="citizens">
     <table>
-      <tr v-for="citizen in citizens">
+      <tr v-for="citizen in citizens" @click="selectCitizen(citizen)">
         <td>{{citizen.firstname}}</td>
         <td>{{citizen.lastname}}</td>
-        <td>{{citizen.age}}</td>
       </tr>
     </table>
-    <button @click="addCitizen">Add</button>
-    <label>#citizens {{counter}}</label>
   </div>
 </template>
 
-
 <script>
+/* eslint-disable */
 import Vue from "vue";
 import VueResource from "vue-resource";
-Vue.use(VueResource); //TODO ask what it does
+Vue.use(VueResource); 
 
 export default {
   http: {
@@ -29,15 +25,9 @@ export default {
       citizens: []
     };
   },
-  props: ["firstname", "lastname", "age"],
   methods: {
-    addCitizen() {
-      this.citizens.push({ firstname: "Lisa", lastname: "Simpson", age: "10" });
-    }
-  },
-  computed: {
-    counter() {
-      return this.citizens.length;
+    selectCitizen(citizen) {
+      bus.$emit('selectedCitizen', citizen.id);
     }
   },
   mounted() {
@@ -50,3 +40,13 @@ export default {
   }
 };
 </script>
+
+
+<style>
+  #citizens {
+    display:inline-block;
+  }
+  table{
+    margin: 0 auto;
+  }
+</style>

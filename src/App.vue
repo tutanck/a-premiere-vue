@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-    <citizen firstname="Maggie" lastname="Simpson" age="1" ></citizen>
+    <citizen-page></citizen-page>
   </div>
 </template>
 
 <script>
-import Citizen from "./components/chap5/Citizen";
+/* eslint-disable */
+import CitizenPage from './components/chap8/CitizenPage'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    Citizen
+    CitizenPage
   }
-};
+}
 </script>
 
 <style>
